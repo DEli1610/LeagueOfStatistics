@@ -1,13 +1,14 @@
 remote_theme: jekyll/minima@master
 
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-remote-theme
+- jekyll-feed
+- jekyll-seo-tag
+
 
 title: "DSC80 - Practices of Data Science"
 description: "TEST"
-
 github_username: DimitrijEli
-
 
 minima:
   skin: auto
