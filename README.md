@@ -60,8 +60,7 @@ These early-game features capture events and advantages within the first 10 minu
 
 ---
 
-### Dataset Overview (Placeholder)
-
+### Dataset Overview
 The table below provides an overview of the cleaned dataset after selecting the relevant columns.
 
 <div class="table-scroll">
