@@ -9,3 +9,11 @@ description: "DSC80 Project – Early Game Analysis"
 minima:
   skin: auto
   show_excerpts: true
+  social_links:
+    title: "LinkedIn"
+    icon: LinkedIn
+    url: "https://www.linkedin.com/in/dimitrij-eli-966843257/"
+    title: "GitHub"
+    icon: GitHub
+    url: "https://github.com/DimitrijEli"
+  
