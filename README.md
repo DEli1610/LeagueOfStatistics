@@ -1,3 +1,4 @@
+# League Of Statistics - Scientific Analysis of professional E-Sport Data
 ## Introduction
 
 The dataset used in this project contains detailed match-level and player-level statistics from professional League of Legends games. It includes information on champions, player roles, in-game events, and early-game performance metrics, providing a strong foundation for both exploratory data analysis and predictive modeling. Gaining an initial understanding of the structure and scope of the data is a crucial first step in the data science lifecycle.
