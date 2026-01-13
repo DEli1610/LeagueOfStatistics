@@ -1,7 +1,4 @@
 # League of Legends – Is Leona OP?
-
-**Name(s):** Dimitrij Eli
-
 ## Introduction
 
 The dataset used in this project contains detailed match-level and player-level statistics from professional League of Legends games. It includes information on champions, player roles, in-game events, and early-game performance metrics, providing a strong foundation for both exploratory data analysis and predictive modeling. Gaining an initial understanding of the structure and scope of the data is a crucial first step in the data science lifecycle.
@@ -14,7 +11,7 @@ This project focuses on the following research question:
 
 - **Is Leona a better pick as a support champion when it comes to winning a game?**
 
-This question motivates the first part of the analysis, which examines champion-specific performance with a particular emphasis on Leona’s impact as a support pick.
+This question motivates the first part of the analysis, which examines championö-specific performance with a particular emphasis on Leona’s impact as a support pick.
 
 ### Prediction Objective
 
@@ -299,4 +296,5 @@ Since the p-value is far below the 5% significance level, we **reject the null h
 
 This result is consistent with the model’s reliance on early-game features, which naturally provide clearer signals for teams that are already ahead and more ambiguous signals for teams attempting to recover from an early deficit.
 
-
+## Contributors
+- Dimitrij Eli 
