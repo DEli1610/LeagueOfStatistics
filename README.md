@@ -63,8 +63,6 @@ These early-game features capture events and advantages within the first 10 minu
 ### Dataset Overview
 The table below provides an overview of the cleaned dataset after selecting the relevant columns.
 
-<div class="table-scroll">
-
 | gameid           | datacompleteness   | league   | position   | playerid                                  | champion   |   gamelength |   result |   kills |   deaths |   assists |   teamkills |   teamdeaths |   firstblood |   firstdragon |   goldat10 |   xpat10 |   csat10 |   golddiffat10 |   xpdiffat10 |   csdiffat10 |   killsat10 |   assistsat10 |   deathsat10 |
 |:-----------------|:-------------------|:---------|:-----------|:------------------------------------------|:-----------|-------------:|---------:|--------:|---------:|----------:|------------:|-------------:|-------------:|--------------:|-----------:|---------:|---------:|---------------:|-------------:|-------------:|------------:|--------------:|-------------:|
 | LOLTMNT03_179647 | complete           | LFL2     | top        | oe:player:c659697694306de62d978569b84c344 | Gnar       |         1592 |        0 |       1 |        2 |         1 |           3 |           13 |            0 |           nan |       3058 |     4466 |       75 |           -336 |         -137 |           -4 |           0 |             0 |            1 |
@@ -77,8 +75,6 @@ The table below provides an overview of the cleaned dataset after selecting the 
 | LOLTMNT03_179647 | complete           | LFL2     | mid        | oe:player:7b0aeb1bb297b0d44629e94186bcb6a | Orianna    |         1592 |        1 |       1 |        1 |         8 |          13 |            3 |            0 |           nan |       3425 |     4789 |       91 |            405 |          205 |           16 |           0 |             0 |            0 |
 | LOLTMNT03_179647 | complete           | LFL2     | bot        | oe:player:de75f2eb439368d9b39281bd0c4bdab | Varus      |         1592 |        1 |       8 |        0 |         3 |          13 |            3 |            0 |           nan |       3519 |     3682 |       92 |            422 |          279 |           11 |           0 |             0 |            0 |
 | LOLTMNT03_179647 | complete           | LFL2     | sup        | oe:player:bea6c089fd517fff3bc020290ae48f7 | Braum      |         1592 |        1 |       0 |        0 |        11 |          13 |            3 |            0 |           nan |       2199 |     2420 |       12 |             85 |         -493 |           -8 |           0 |             0 |            0 |
-
-</div>
 
 ---
 
