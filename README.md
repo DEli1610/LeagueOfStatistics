@@ -78,7 +78,6 @@ The table below provides an overview of the cleaned dataset after selecting the 
 ---
 
 
-
 ### Removal of Team-Level Rows
 
 Upon inspection of the `position` column, rows labeled as `team` were identified as team-level statistics rather than individual champion or player statistics. Since the subsequent analyses focus on champion performance and player-level outcomes, all team-level rows were removed from the dataset before proceeding.
@@ -97,9 +96,8 @@ The analysis shows that a small portion of the dataset contains partial observat
 ![Support Picks](plots/Support_Picks.png)
 
 
-The table above shows the top 10 champions ranked by win rate, considering only champions with at least 20 games played. While these champions achieve relatively high win rates, the results should be interpreted with caution, as some champions appear with a comparatively small number of games. This overview provides initial insight into strong-performing champions but does not account for role-specific effects or early-game dynamics explored later in the analysis.
+The table above shows the top support champions ranked by pick count. This overview provides initial insight into the relevance and the overall popularity of Leona. It is necessary for further interpretation and classification of the hypothesis testing.
 
-![Top 10 Champions](plots/top_10_champion_win.png)
 
 ## Assessment of Missingness
 
