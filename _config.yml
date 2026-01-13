@@ -11,7 +11,7 @@ description: "TEST"
 github_username: DimitrijEli
 
 minima:
-  skin: auto
+  skin: classic
   show_excerpts: true
   social_links:
     title: "LinkedIn"
