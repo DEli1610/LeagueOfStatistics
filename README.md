@@ -58,8 +58,6 @@ These early-game features capture events and advantages within the first 10 minu
 - `assistsat10`
 - `deathsat10`
 
----
-
 ### Dataset Overview
 The table below provides an overview of the cleaned dataset after selecting the relevant columns.
 
@@ -76,12 +74,11 @@ The table below provides an overview of the cleaned dataset after selecting the 
 | LOLTMNT03_179647 | complete           | LFL2     | bot        | oe:player:de75f2eb439368d9b39281bd0c4bdab | Varus      |         1592 |        1 |       8 |        0 |         3 |          13 |            3 |            0 |           nan |       3519 |     3682 |       92 |            422 |          279 |           11 |           0 |             0 |            0 |
 | LOLTMNT03_179647 | complete           | LFL2     | sup        | oe:player:bea6c089fd517fff3bc020290ae48f7 | Braum      |         1592 |        1 |       0 |        0 |        11 |          13 |            3 |            0 |           nan |       2199 |     2420 |       12 |             85 |         -493 |           -8 |           0 |             0 |            0 |
 
----
-
-
 ### Removal of Team-Level Rows
 
 Upon inspection of the `position` column, rows labeled as `team` were identified as team-level statistics rather than individual champion or player statistics. Since the subsequent analyses focus on champion performance and player-level outcomes, all team-level rows were removed from the dataset before proceeding.
+
+---
 
 ## Data Cleaning
 After checking the `datacompleteness` column it shows that partialy completed data is missing the most important data for hypothesis 2. Lets get a overview how much of the data is missing.
@@ -99,6 +96,7 @@ The analysis shows that a small portion of the dataset contains partial observat
 
 The table above shows the top support champions ranked by pick count. This overview provides initial insight into the relevance and the overall popularity of Leona. It is necessary for further interpretation and classification of the hypothesis testing.
 
+---
 
 ## Assessment of Missingness
 
@@ -110,18 +108,13 @@ A brief investigation shows that all leagues containing partial data are based i
 ## Hypothesis Testing
 In this hypothesis test, we examine whether selecting **Leona as the support champion** is associated with a higher probability of winning a game compared to selecting other support champions. This analysis aims to evaluate the common assumption that Leona’s strong engage and crowd control provide a competitive advantage that translates into higher win rates.
 
----
-
 ### Null Hypothesis (H₀)
 
 Teams that pick **Leona as their support** do **not** have a higher probability of winning a game compared to teams that select other support champions.
 
-
 ### Alternative Hypothesis (H₁)
 
 Teams that pick **Leona as their support** have a **higher** probability of winning a game compared to teams that select other support champions.
-
----
 
 ### Test Statistic
 
@@ -131,19 +124,9 @@ The **difference in mean win rates** between:
 
 where the win rate is defined as the mean of the binary game outcome variable (`result`, with 1 indicating a win and 0 indicating a loss).
 
----
-
 ### Method
 
-A **one-sided permutation test** was conducted under the null hypothesis that picking Leona as support has no effect on the probability of winning. The champion labels were randomly permuted **10,000 times** while keeping the game outcomes fixed, generating a null distribution of the difference in mean win rates.
-
----
-
-### Significance Level
-
-5%
-
----
+A **one-sided permutation test** was conducted under the null hypothesis that picking Leona as support has no effect on the probability of winning. The champion labels were randomly permuted **10,000 times** while keeping the game outcomes fixed, generating a null distribution of the difference in mean win rates. **The significance level is 5%.**
 
 ### Results
 
@@ -157,6 +140,8 @@ The permutation test produced a **p-value of 0.9923**.
 
 Since the p-value is far greater than the chosen significance level of 5%, we **fail to reject the null hypothesis**. There is no statistical evidence that picking Leona as support increases a team’s probability of winning. The observed negative difference is small and fully consistent with random variation rather than a true performance advantage.
 
+---
+
 ## Framing a Prediction Problem
 ### Prediction Problem
 The goal of this prediction task is to **predict whether a team will win a game** (`result`) using only information available from the **first 10 minutes** of gameplay.
@@ -165,14 +150,10 @@ The prediction is formulated as a **binary classification problem**, where:
 - `result = 1` indicates a win,
 - `result = 0` indicates a loss.
 
----
-
 ### Motivation
 Early-game performance in League of Legends often sets the trajectory of the entire match. By restricting the model to variables observed within the first 10 minutes, this prediction problem reflects a realistic in-game scenario in which teams or analysts aim to estimate the likelihood of victory before the game is decided.
 
 This approach also aligns with the broader project theme of early-game impact, particularly relevant for champions like **Leona**, who are generally considered strong in the early to mid game.
-
----
 
 ### Features (First 10 Minutes Only)
 The model uses the following predictors, all of which are observable by minute 10:
@@ -191,12 +172,8 @@ The model uses the following predictors, all of which are observable by minute 1
 
 All features are restricted to early-game information and do not leak post–10-minute outcomes.
 
----
-
 ### Target Variable
 - **Target:** `result` (binary game outcome: win or loss)
-
----
 
 ### Framing as a Machine Learning Task
 This problem is framed as a **supervised binary classification task**:
@@ -204,6 +181,8 @@ This problem is framed as a **supervised binary classification task**:
 - **Output:** predicted probability of winning the game
 
 The resulting model aims to quantify how strongly early-game advantages translate into eventual victory.
+
+---
 
 ## Baseline Model
 ### Logistic Regression Model
@@ -228,6 +207,8 @@ Both prediction models achieved similar overall performance, with small but mean
 
 **As a result, logistic regression was chosen as the final model and further fine-tuned.**
 
+---
+
 ## Final Model
 ### Model Comparison and Feature Selection
 
@@ -235,7 +216,7 @@ Reducing the number of features led to a slight decrease in model performance, w
 
 Expanding the feature set to include opponent-level and difference-based early-game features resulted in improved performance across all evaluation metrics. To preserve model interpretability, the final feature set was restricted to variables with the strongest influence on the prediction. Specifically, only features with standardized logistic regression coefficients exceeding an absolute value of **0.10** were retained, as smaller coefficients contribute minimally to the model. This approach strikes a balance between predictive performance and interpretability, making the final model both effective and explainable.
 
-## Final Model Results
+### Final Model Results
 
 The final prediction model is a logistic regression classifier trained on a carefully selected set of early-game features: gold difference, experience difference, creep score difference, assists at 10 minutes, and opponent assists at 10 minutes. These features capture both economic advantages and early team-fight dynamics while maintaining strong interpretability.
 
@@ -245,11 +226,11 @@ Overall, this result demonstrates that early-game information alone contains mea
 
 The final model achieves an **accuracy of approximately 62%**, indicating that it correctly predicts the outcome of about **two thirds of the matches based solely on early-game information.** Precision and recall are both close to 0.62, suggesting a well-balanced model that does not strongly favor one type of prediction error over the other. While these values are far from perfect, they demonstrate that early-game features already contain meaningful predictive signal. The consistency across all evaluation metrics indicates that the model captures relevant early-game dynamics in a stable and interpretable manner.
 
+---
+
 ## Fairness Analysis
 
 In this section, we evaluate whether the final prediction model performs differently across meaningful subgroups of teams. Specifically, we investigate whether the model exhibits disparities in predictive performance between teams that are **ahead early in the game** and teams that are **behind early in the game**.
-
----
 
 ### Group Definition
 
@@ -260,13 +241,9 @@ Teams are divided into two groups based on their gold difference at 10 minutes:
 
 This grouping is well aligned with the model’s feature set, which relies exclusively on early-game information.
 
----
-
 ### Evaluation Metric
 
 To assess fairness, we compare **precision** across the two groups. Precision is defined as the proportion of games predicted as wins that are actually wins. This metric is particularly relevant in this context, as false positive predictions (predicting a win when the team eventually loses) are especially undesirable.
-
----
 
 ### Hypotheses
 
@@ -276,24 +253,22 @@ To assess fairness, we compare **precision** across the two groups. Precision is
 - **Alternative Hypothesis (H₁):**  
   The model is unfair. Precision is **lower** for early-game disadvantaged teams than for early-game advantaged teams.
 
----
-
 ### Method
 
 A **one-sided permutation test** was conducted to compare the precision of the two groups. The final trained model was kept fixed, and group labels were randomly permuted 10,000 times to generate a null distribution of precision differences under the assumption of fairness.
 
----
 ### Results
 
 The observed precision for early-game advantaged teams was substantially higher than for early-game disadvantaged teams. The permutation test produced a **p-value effectively equal to zero** (p < 0.0001), indicating that none of the random permutations resulted in a precision difference as large as the observed one.
 
----
 
 ### Conclusion
 
 Since the p-value is far below the 5% significance level, we **reject the null hypothesis**. There is strong statistical evidence that the model’s precision is lower for teams that are behind at 10 minutes. This indicates a systematic performance disparity: the model is significantly more reliable when predicting wins for early-game advantaged teams than for early-game disadvantaged teams.
 
 This result is consistent with the model’s reliance on early-game features, which naturally provide clearer signals for teams that are already ahead and more ambiguous signals for teams attempting to recover from an early deficit.
+
+---
 
 ## Contributors
 - Dimitrij Eli 
