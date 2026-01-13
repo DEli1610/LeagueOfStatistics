@@ -1,19 +1,22 @@
-remote_theme: jekyll/minima@v2.5.2
+remote_theme: jekyll/minima@master
 
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: "DSC80 - Practices of Data Science"
-description: "DSC80 Project – Early Game Analysis"
+description: "TEST"
+
+github_username: DimitrijEli
+
 
 minima:
   skin: auto
   show_excerpts: true
   social_links:
     title: "LinkedIn"
-    icon: LinkedIn
+    icon: linkedininkedIn
     url: "https://www.linkedin.com/in/dimitrij-eli-966843257/"
     title: "GitHub"
-    icon: GitHub
+    icon: github
     url: "https://github.com/DimitrijEli"
   
