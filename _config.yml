@@ -6,18 +6,20 @@ kramdown:
 plugins:
 - jekyll-remote-theme
 - jekyll-seo-tag
+- jekyll-redirect-from
 
 
 title: "DSC80 - Practices of Data Science"
 description: |
   This is an academic data science project by Dimitrij Eli for the course DSC 80 — Practices of Data Science
-  at the University of California, San Diego. It explores how early-game data from professional League of Legends matches can be used to analyze champion impact, test common assumptions (like whether Leona is “OP”), and predict match outcomes in an interpretable way.
-
+  at the University of California, San Diego. It explores how early-game data from professional matches can explain champion impact and predict match outcomes.
   If you’re interested, have feedback, or would like to connect, feel free to reach out.
 
 
 
 github_username: DimitrijEli
+email: dimitrij.eli@outlook.com
+
 
 minima:
   skin: classic
@@ -28,6 +30,6 @@ minima:
       url: "https://www.linkedin.com/in/dimitrij-eli-966843257/"
     - title: "GitHub"
       icon: github
-      url: "https://github.com/DimitrijEli"
+      url: "https://github.com/DimitrijEli?tab=repositories"
   nav_pages:
     - about.md

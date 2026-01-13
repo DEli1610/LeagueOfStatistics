@@ -1,9 +1,10 @@
 ---
 layout: page
-title: About
+title: GitHub Repository
 permalink: /about/
+redirect_to: https://github.com/DEli1610/LeagueOfStatistics
 ---
 
-Hi, I’m Dimitrij Eli.
+
 
 
