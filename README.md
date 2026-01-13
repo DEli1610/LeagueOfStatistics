@@ -91,16 +91,16 @@ After checking the `datacompleteness` column it shows that partialy completed da
 
 The figure below shows the distribution of complete and partial observations in the dataset.
 
-![Datacompleteness Distribution](plots\datacompleteness.png)
+![Datacompleteness Distribution](plots/datacompleteness.png)
 
 The analysis shows that a small portion of the dataset contains partial observations, accounting for approximately 8% of all rows. At first glance, it may seem reasonable to remove these incomplete entries. However, before doing so, we further investigate the underlying missingness mechanisms in Step 3. In particular, we examine whether the missing values are missing completely at random (MCAR), missing at random (MAR), missing not at random (MNAR), or structurally missing (MD).
 
-![Support Picks](plots\Support_Picks.png)
+![Support Picks](plots/Support_Picks.png)
 
 
 The table above shows the top 10 champions ranked by win rate, considering only champions with at least 20 games played. While these champions achieve relatively high win rates, the results should be interpreted with caution, as some champions appear with a comparatively small number of games. This overview provides initial insight into strong-performing champions but does not account for role-specific effects or early-game dynamics explored later in the analysis.
 
-![Top 10 Champions](plots\top_10_champion_win.png)
+![Top 10 Champions](plots/top_10_champion_win.png)
 
 ## Assessment of Missingness
 
